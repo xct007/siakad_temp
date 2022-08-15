@@ -11,7 +11,6 @@ import NextNProgress from "nextjs-progressbar";
 
 import { userService } from "services";
 import { Alert, Nav } from "components";
-import { NavBar } from "../components/NavBar";
 
 export default App;
 
