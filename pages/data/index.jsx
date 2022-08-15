@@ -17,56 +17,56 @@ import NextLink from "next/link";
 export default Index;
 
 const sm1 = [
-  { smst: "SATU" }
+  { smst: 1 }
 ];
 const sm2 = [
-  { smst: "SATU" },
-  { smst: "DUA" }
+  { smst: 1 },
+  { smst: 2 }
 ];
 const sm3 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 }
 ];
 const sm4 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" },
-  { smst: "EMPAT" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 },
+  { smst: 4 }
 ];
 const sm5 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" },
-  { smst: "EMPAT" },
-  { smst: "LIMA" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 },
+  { smst: 4 },
+  { smst: 5 }
 ];
 const sm6 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" },
-  { smst: "EMPAT" },
-  { smst: "LIMA" },
-  { smst: "ENAM" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 },
+  { smst: 4 },
+  { smst: 5 },
+  { smst: 6 }
 ];
 const sm7 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" },
-  { smst: "EMPAT" },
-  { smst: "LIMA" },
-  { smst: "ENAM" },
-  { smst: "TUJUH" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 },
+  { smst: 4 },
+  { smst: 5 },
+  { smst: 6 },
+  { smst: 7 }
 ];
 const sm8 = [
-  { smst: "SATU" },
-  { smst: "DUA" },
-  { smst: "TIGA" },
-  { smst: "EMPAT" },
-  { smst: "LIMA" },
-  { smst: "ENAM" },
-  { smst: "TUJUH" },
-  { smst: "DELAPAN" }
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 4 },
+  { smst: 5 },
+  { smst: 6 },
+  { smst: 7 },
+  { smst: 8 },
+  { smst: 9 }
 ];
 function Index() {
   const [data, setData] = useState(null);
