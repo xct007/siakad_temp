@@ -122,7 +122,7 @@ function Index() {
                 <td style={{ whiteSpace: "nowrap" }}>{user.smst}</td>
                 <td style={{ whiteSpace: "nowrap" }}>
                   <NextLink
-                    href={`https://api.itsrose.my.id/itpa/krs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&semester=${user.smst}&apikey=stefen`}
+                    href={`https://api.itsrose.my.id/itpa/khs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&semester=${user.smst}&apikey=stefen`}
                     passHref
                   >
                     <Button
