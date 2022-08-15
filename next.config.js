@@ -1,4 +1,7 @@
 module.exports = {
+  typescript: {
+    ignoreBuildErrors: true
+  }
   reactStrictMode: false,
   serverRuntimeConfig: {
     secret:
