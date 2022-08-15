@@ -61,12 +61,12 @@ const sm7 = [
 const sm8 = [
   { smst: 1 },
   { smst: 2 },
+  { smst: 3 },
   { smst: 4 },
   { smst: 5 },
   { smst: 6 },
   { smst: 7 },
-  { smst: 8 },
-  { smst: 9 }
+  { smst: 8 }
 ];
 function Index() {
   const [data, setData] = useState(null);
