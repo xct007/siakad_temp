@@ -11,7 +11,6 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { ThreeDots } from "react-loader-spinner";
 
 export default Home;
 
@@ -36,31 +35,7 @@ function Home() {
       });
   }, []);
 
-  if (isLoading)
-    return (
-      <div className="p-4">
-        <div className="container">
-          <Box
-            sx={{
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <ThreeDots
-              height="100"
-              width="100"
-              radius="10"
-              color="red"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClassName="loding"
-              visible={true}
-            />
-          </Box>
-        </div>
-      </div>
-    );
+  if (isLoading) return null
   if (!data) return null;
   const user = {
     avatar: "/static/siakad.png",
