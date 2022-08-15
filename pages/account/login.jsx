@@ -71,6 +71,7 @@ const Login = () => {
   const { errors } = formState;
 
   function onSubmit({ username, password }) {
+    console.log('test')
     return userService
       .login(username, password)
       .then(() => {

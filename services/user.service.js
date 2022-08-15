@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { BehaviorSubject } from "rxjs";
 import getConfig from "next/config";
 import Router from "next/router";
@@ -29,6 +30,7 @@ function getData(username, password) {
 }
 
 function login(username, password) {
+  console.log(baseUrl)
   return fetchWrapper
     .post(`${baseUrl}/authenticate`, { username, password })
     .then((user) => {

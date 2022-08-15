@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
@@ -24,6 +24,7 @@
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cheerio": "^1.0.0-rc.12",
+    "cross-env": "^7.0.3",
     "express-jwt": "^6.1.0",
     "formik": "^2.1.5",
     "fs": "^0.0.1-security",
