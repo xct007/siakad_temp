@@ -56,6 +56,7 @@ export default function getData(req, res) {
             }
             try {
               res.statusCode = 200;
+              res.setHeader('Access-Control-Allow-Origin', "*")
               res.setHeader('Content-Type', 'application/json');
               res.setHeader('Cache-Control', 'max-age=180000');
               res.end(JSON.stringify({

@@ -30,7 +30,6 @@ function getData(username, password) {
 }
 
 function login(username, password) {
-  console.log(baseUrl)
   return fetchWrapper
     .post(`${baseUrl}/authenticate`, { username, password })
     .then((user) => {

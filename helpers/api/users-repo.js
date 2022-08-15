@@ -69,7 +69,7 @@ function saveData() {
 }
 
 function login(username, password) {
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     let cookies;
     axios
       .request({
@@ -77,7 +77,7 @@ function login(username, password) {
         url: "http://siakad.itpa.ac.id/index.php?m=login&p=proses",
         data: qs.stringify({
           username: username,
-          password: password,
+          password: password
         }),
         headers: {
           Connection: "keep-alive",
@@ -101,12 +101,20 @@ function login(username, password) {
           })
           .then((data) => {
             let $ = cheerio.load(data.data);
-            resolve({
-              status: true,
-              table: $("table.table > thead").html(),
-            });
+            try {
+              resolve({
+                status: true,
+                result: "Login Berhasil"
+              });
+            } catch (errr) {
+              resolve({
+                status: false,
+                message: 'server error 0'
+              })
+            }
           })
           .catch((er) => {
+            console.log(er)
             resolve({
               status: false,
               message: "server error 1",

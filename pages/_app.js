@@ -25,7 +25,6 @@ function App({ Component, pageProps }) {
 
     // on route change start - hide page content by setting authorized to false
     const hideContent = () => {
-      console.log("memek");
       setAuthorized(false);
     };
     router.events.on("routeChangeStart", hideContent);
@@ -45,7 +44,7 @@ function App({ Component, pageProps }) {
   function authCheck(url) {
     // redirect to login page if accessing a private page and not logged in
     setUser(userService.userValue);
-    const publicPaths = ["/account/login", "/account/register"];
+    const publicPaths = ["/account/login", "/account/register", "/api/users/get-profile-data", "/api/users/authenticate"];
     const path = url.split("?")[0];
     if (!userService.userValue && !publicPaths.includes(path)) {
       setAuthorized(false);

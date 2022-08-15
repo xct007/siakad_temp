@@ -11,7 +11,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { ThreeDots } from "react-loader-spinner";
+import { ThreeDots, Triangle } from "react-loader-spinner";
 
 export default Home;
 
@@ -97,22 +97,22 @@ function Home() {
               <Typography color="textPrimary" gutterBottom variant="h5">
                 {user.nama}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 {user.nim}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 {user.program_studi}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 Angkatan {user.angkatan}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 Semester {user.semester}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 Tahun Ajaran {user.tahun_ajaran}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color="textSecondary" variant="button">
                 Batas Studi {user.batas_studi}
               </Typography>
             </Box>
