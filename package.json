@@ -26,7 +26,6 @@
     "cheerio": "^1.0.0-rc.12",
     "express-jwt": "^6.1.0",
     "formik": "^2.1.5",
-    "framer-motion": "^7.1.0",
     "fs": "^0.0.1-security",
     "gasp": "^0.0.2",
     "gsap": "^3.10.4",
