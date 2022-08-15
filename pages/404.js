@@ -1,8 +1,8 @@
 import Head from "next/head";
 import NextLink from "next/link";
-import { Box, Button, Container, Typography } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Box, Container, Typography } from "@mui/material";
 
+const onichan = `Kyaahhh >//<`
 const NotFound = () => (
   <>
     <Head>
@@ -37,16 +37,16 @@ const NotFound = () => (
               }}
             />
           </Box>
-          <NextLink href="/home" passHref>
-            <Button
-              component="a"
-              startIcon={<ArrowBackIcon fontSize="small" />}
-              sx={{ mt: 3 }}
-              variant="contained"
+          <Typography
+              color="textPrimary"
+              variant="h4"
+              align="center"
             >
-              Go back to home
-            </Button>
-          </NextLink>
+              {onichan}
+              <Typography align="center" color="textSecondary" gutterBottom variant="body2">
+                yamete kudasai oni-chan
+              </Typography>
+            </Typography>
         </Box>
       </Container>
     </Box>

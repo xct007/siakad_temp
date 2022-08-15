@@ -11,7 +11,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { ThreeDots, Triangle } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 export default Home;
 

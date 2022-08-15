@@ -35,8 +35,8 @@ function Nav() {
           <NavLink href="/" exact className="nav-item nav-link">
             Home
           </NavLink>
-          <NavLink href="/users" className="nav-item nav-link">
-            Users
+          <NavLink href="/data" className="nav-item nav-link">
+            Data
           </NavLink>
           <a onClick={logout} className="nav-item nav-link">
             Logout

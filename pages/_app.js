@@ -44,13 +44,13 @@ function App({ Component, pageProps }) {
   function authCheck(url) {
     // redirect to login page if accessing a private page and not logged in
     setUser(userService.userValue);
-    const publicPaths = ["/account/login", "/account/register", "/api/users/get-profile-data", "/api/users/authenticate"];
+    const publicPaths = ["/account/login", "/account/register", "/404"];
     const path = url.split("?")[0];
     if (!userService.userValue && !publicPaths.includes(path)) {
       setAuthorized(false);
       router.push({
         pathname: "/account/login",
-        query: { "mau-kemana-dek": router.asPath },
+        query: { "yamete-kudasai": router.asPath },
       });
     } else {
       setAuthorized(true);

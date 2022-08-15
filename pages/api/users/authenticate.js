@@ -19,7 +19,6 @@ async function authenticate(req, res) {
   const { username, password } = req.body;
   const user = await usersRepo.login(username, password);
   /* eslint-disable no-console */
-  console.log(user)
   // validate
   if (user.status == false) {
     throw "Username or password is incorrect";

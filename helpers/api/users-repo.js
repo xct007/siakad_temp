@@ -2,6 +2,7 @@ const fs = require("fs");
 const axios = require("axios");
 const cheerio = require("cheerio");
 const qs = require("qs");
+const tabletojson = require('tabletojson').Tabletojson
 // users in JSON file for simplicity, store in a db for production applications
 let users = require("data/users.json");
 let khs = {
@@ -101,9 +102,23 @@ function login(username, password) {
           })
           .then((data) => {
             let $ = cheerio.load(data.data);
+            if (!$('table.table').html()) resolve({status: false})
+            let datas;
+            let cv = tabletojson.convert(`<table>${$('table.table').html()}</table>`)
+            datas = {
+                nama: cv[0].[0].[2] || null,
+                jurusan: cv[0].[0].[6] || null,
+                nim: cv[0].[1].[2] || null,
+                program_studi: cv[0].[1].[6] || null,
+                angkatan: cv[0].[2].[2] || null,
+                semester: cv[0].[2].[6] || null,
+                batas_studi: cv[0].[3].[2] || null,
+                tahun_ajaran: cv[0].[3].[6] || null
+            }
             try {
               resolve({
                 status: true,
+                semester: datas.semester,
                 result: "Login Berhasil"
               });
             } catch (errr) {
@@ -114,7 +129,6 @@ function login(username, password) {
             }
           })
           .catch((er) => {
-            console.log(er)
             resolve({
               status: false,
               message: "server error 1",
