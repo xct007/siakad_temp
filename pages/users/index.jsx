@@ -10,21 +10,24 @@ import NextLink from "next/link";
 export default Index;
 
 const cetak_khs = [
-  {"smst": 1},
-  {"smst": 2},
-  {"smst": 3},
-  {"smst": 4},
-  {"smst": 5},
-  {"smst": 6},
-  {"smst": 7},
-  {"smst": 8}
-]
+  { smst: 1 },
+  { smst: 2 },
+  { smst: 3 },
+  { smst: 4 },
+  { smst: 5 },
+  { smst: 6 },
+  { smst: 7 },
+  { smst: 8 },
+];
 function Index() {
-
   return (
     <Layout>
       <h1>Users</h1>
-      <Link href={`https://api.itsrose.my.id/itpa/krs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&apikey=stefen`} className="btn btn-sm btn-success mb-2" passHref>
+      <Link
+        href={`https://api.itsrose.my.id/itpa/krs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&apikey=stefen`}
+        className="btn btn-sm btn-success mb-2"
+        passHref
+      >
         Cetak KRS
       </Link>
       <p>test</p>
@@ -41,7 +44,10 @@ function Index() {
               <tr key={user.smst}>
                 <td>{user.smst}</td>
                 <td style={{ whiteSpace: "nowrap" }}>
-                  <NextLink href={`https://api.itsrose.my.id/itpa/krs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&semester=${user.smst}&apikey=stefen`} passHref>
+                  <NextLink
+                    href={`https://api.itsrose.my.id/itpa/krs?username=${userService.userValue?.username}&password=${userService.userValue?.password}&semester=${user.smst}&apikey=stefen`}
+                    passHref
+                  >
                     <Button
                       component="a"
                       startIcon={<ArrowForwardIcon fontSize="small" />}

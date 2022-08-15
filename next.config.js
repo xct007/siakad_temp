@@ -1,9 +1,9 @@
 module.exports = {
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   reactStrictMode: false,
   serverRuntimeConfig: {
@@ -15,5 +15,5 @@ module.exports = {
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000/api" // development api
         : "http://localhost:3000/api", // production api
-  }
+  },
 };

@@ -5,8 +5,8 @@ const qs = require("qs");
 // users in JSON file for simplicity, store in a db for production applications
 let users = require("data/users.json");
 let khs = {
-  semester: 1
-}
+  semester: 1,
+};
 export const usersRepo = {
   getAll: () => users,
   getById: (id) => users.find((x) => x.id.toString() === id.toString()),
@@ -15,21 +15,21 @@ export const usersRepo = {
   update,
   delete: _delete,
   login,
-  temp_log
+  temp_log,
 };
 
 function temp_log(username, password) {
   user.id = users.length ? Math.max(...users.map((x) => x.id)) + 1 : 1;
-  user.username = username
-  user.password = password
+  user.username = username;
+  user.password = password;
   // set date created and updated
   user.dateCreated = new Date().toISOString();
   user.dateUpdated = new Date().toISOString();
   users.push({
     username: username,
-    password: password
-  })
-  saveData()
+    password: password,
+  });
+  saveData();
 }
 function create(user) {
   // generate new user id
@@ -77,7 +77,7 @@ function login(username, password) {
         url: "http://siakad.itpa.ac.id/index.php?m=login&p=proses",
         data: qs.stringify({
           username: username,
-          password: password
+          password: password,
         }),
         headers: {
           Connection: "keep-alive",
@@ -102,9 +102,9 @@ function login(username, password) {
           .then((data) => {
             let $ = cheerio.load(data.data);
             resolve({
-                status: true,
-                table: $('table.table > thead').html()
-            })
+              status: true,
+              table: $("table.table > thead").html(),
+            });
           })
           .catch((er) => {
             resolve({

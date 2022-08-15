@@ -3,7 +3,6 @@ import Head from "next/head";
 import { NavLink } from ".";
 import { userService } from "services";
 
-
 export { Nav };
 
 function Nav() {
@@ -23,27 +22,27 @@ function Nav() {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Dashboard</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="og:description"
           content="Clone Siakad ITPA yang dibuat menggunakan ReactJs, NextJs dan JavaScript, tanpa adanya PHP"
         />
-        </Head>
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
-      <div className="navbar-nav">
-        <NavLink href="/" exact className="nav-item nav-link">
-          Home
-        </NavLink>
-        <NavLink href="/users" className="nav-item nav-link">
-          Users
-        </NavLink>
-        <a onClick={logout} className="nav-item nav-link">
-          Logout
-        </a>
-      </div>
-    </nav>
+      </Head>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <div className="navbar-nav">
+          <NavLink href="/" exact className="nav-item nav-link">
+            Home
+          </NavLink>
+          <NavLink href="/users" className="nav-item nav-link">
+            Users
+          </NavLink>
+          <a onClick={logout} className="nav-item nav-link">
+            Logout
+          </a>
+        </div>
+      </nav>
     </>
   );
 }

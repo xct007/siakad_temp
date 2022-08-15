@@ -9,58 +9,61 @@ import {
   CardActions,
   CardContent,
   Divider,
-  Typography
-} from '@mui/material';
-import { ThreeDots } from 'react-loader-spinner'
+  Typography,
+} from "@mui/material";
+import { ThreeDots } from "react-loader-spinner";
 
 export default Home;
 
-
 function Home() {
-  const [data, setData] = useState(null)
-  const [isLoading, setLoading] = useState(false)
-  const username = userService.userValue?.username
-  const password = userService.userValue?.password
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+  const username = userService.userValue?.username;
+  const password = userService.userValue?.password;
   useEffect(() => {
-    setLoading(true)
-    fetch(`/api/users/get-profile-data?username=${username}&password=${password}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setData(data)
-      setLoading(false)
-    }).catch((er) => {
-      setLoading(false)
-      setData(null)
-    })
-  }, [])
+    setLoading(true);
+    fetch(
+      `/api/users/get-profile-data?username=${username}&password=${password}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((er) => {
+        setLoading(false);
+        setData(null);
+      });
+  }, []);
 
-  if (isLoading) return (
-    <div className="p-4">
-      <div className="container">
-        <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        <ThreeDots
-          height="100"
-          width="100"
-          radius="10"
-          color="red"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName="loding"
-          visible={true}
-        />
-      </Box>
+  if (isLoading)
+    return (
+      <div className="p-4">
+        <div className="container">
+          <Box
+            sx={{
+              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <ThreeDots
+              height="100"
+              width="100"
+              radius="10"
+              color="red"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClassName="loding"
+              visible={true}
+            />
+          </Box>
+        </div>
       </div>
-    </div>
-  )
-  if (!data) return null
+    );
+  if (!data) return null;
   const user = {
-    avatar: '/static/siakad.png',
+    avatar: "/static/siakad.png",
     jurusan: data.result.jurusan,
     nama: data.result.nama || null,
     jurusan: data.result.jurusan || null,
@@ -69,72 +72,53 @@ function Home() {
     angkatan: data.result.angkatan || null,
     semester: data.result.semester || null,
     batas_studi: data.result.batas_studi || null,
-    tahun_ajaran: data.result.tahun_ajaran || null
+    tahun_ajaran: data.result.tahun_ajaran || null,
   };
   return (
     <div className="p-4">
       <div className="container">
-      <Card>
-    <CardContent>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        <Avatar
-          src={user.avatar}
-          sx={{
-            height: 64,
-            mb: 2,
-            width: 64
-          }}
-        />
-        <Typography
-          color="textPrimary"
-          gutterBottom
-          variant="h5"
-        >
-          {user.nama}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {user.nim}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          {user.program_studi}
-        </Typography><Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          Angkatan {user.angkatan}
-        </Typography><Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          Semester {user.semester}
-        </Typography><Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          Tahun Ajaran {user.tahun_ajaran}
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-          Batas Studi {user.batas_studi}
-        </Typography>
-      </Box>
-    </CardContent>
-    <Divider />
-  </Card>
+        <Card>
+          <CardContent>
+            <Box
+              sx={{
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Avatar
+                src={user.avatar}
+                sx={{
+                  height: 64,
+                  mb: 2,
+                  width: 64,
+                }}
+              />
+              <Typography color="textPrimary" gutterBottom variant="h5">
+                {user.nama}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                {user.nim}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                {user.program_studi}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                Angkatan {user.angkatan}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                Semester {user.semester}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                Tahun Ajaran {user.tahun_ajaran}
+              </Typography>
+              <Typography color="textSecondary" variant="body2">
+                Batas Studi {user.batas_studi}
+              </Typography>
+            </Box>
+          </CardContent>
+          <Divider />
+        </Card>
       </div>
     </div>
   );
