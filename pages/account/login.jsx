@@ -61,7 +61,7 @@ const Login = () => {
   }, [router]);
   // form validation rules
   const validationSchema = Yup.object().shape({
-    username: Yup.string().required("Username is required"),
+    username: Yup.string().required("Nim is required"),
     password: Yup.string().required("Password is required"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };

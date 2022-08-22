@@ -81,15 +81,21 @@ function Index() {
       .then((res) => res.json())
       .then((datas) => {
         setLoading(false);
-        if (datas.result.semester === "SATU") setData(sm1);
-        if (datas.result.semester === "DUA") setData(sm2);
-        if (datas.result.semester === "TIGA") setData(sm3);
-        if (datas.result.semester === "EMPAT") setData(sm4);
-        if (datas.result.semester === "LIMA") setData(sm5);
-        if (datas.result.semester === "ENAM") setData(sm6);
-        if (datas.result.semester === "TUJUH") setData(sm7);
-        if (datas.result.semester === "DELAPAN") setData(sm8);
-        else setData(sm8)
+        if (datas.result.semester === "SATU") {
+          setData(sm1)
+        } else if (datas.result.semester === "DUA") {
+          setData(sm2)
+        } else if (datas.result.semester === "TIGA") {
+          setData(sm3)
+        } else if (datas.result.semester === "TIGA") {
+          setData(sm4)
+        } else if (datas.result.semester === "TIGA") {
+          setData(sm5)
+        } else if (datas.result.semester === "TIGA") {
+          setData(sm6)
+        } else if (datas.result.semester === "TIGA")  {
+          setData(sm7)
+        } else setData(sm8)
       })
       .catch((er) => {
         setData(null);
@@ -131,7 +137,7 @@ function Index() {
                       sx={{ mt: 0 }}
                       variant="contained"
                     >
-                      Cetak
+                      Cetak KHS
                     </Button>
                   </NextLink>
                 </td>

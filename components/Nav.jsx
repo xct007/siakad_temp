@@ -38,6 +38,9 @@ function Nav() {
           <NavLink href="/data" className="nav-item nav-link">
             Data
           </NavLink>
+          <NavLink href="/profile" className="nav-item nav-link">
+            Profile
+          </NavLink>
           <a onClick={logout} className="nav-item nav-link">
             Logout
           </a>
